@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.wangjingyang.ipc_aidl">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <!--私有进程 ：-->
+        <activity
+            android:name=".ThridActivity"
+            android:process=":ThridActivity"></activity>
+        <!-- 公用进程    全局进程-->
+        <activity
+            android:name=".SecondActivity"
+            android:process="com.example.wangjingyang.ipc_aidl.SecondActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:process=".tesa">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ThreadActivity"
+            android:process=":dara" />
+
+        <service
+            android:name=".MyService"
+            android:enabled="true"
+            android:exported="true" />
+    </application>
+
+</manifest>
